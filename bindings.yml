@@ -1,4 +1,4 @@
-module: Rainmeter
+module: rainmeter-plugin
 cookbook: boehmgc-cpp
 library: "%/ext/binding.a"
 
