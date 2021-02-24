@@ -1,0 +1,8 @@
+generators:
+    cpp:
+        output: ext/bindings.cpp
+        preamble: |-
+        #include "bindgen_helper.hpp"
+        build: make
+    crystal:
+        output: lib/rmcr.cr

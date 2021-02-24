@@ -1,0 +1,20 @@
+processors:
+    - default_constructor
+    - function_class
+    - inheritance
+    - copy_structs
+    - macros
+    - functions
+    - instance_properties
+    - operators
+    - filter_methods
+    - extern_c
+    - instantiate_containers
+    - enums
+
+    - crystal_wrapper
+    - block_overloads
+    - virtual_override
+    - cpp_wrapper
+    - crystal_binding
+    - sanity_check

@@ -1,0 +1,5 @@
+containers:
+    - class: Name of the C++ class
+        type: "Sequential" or "Associative"
+        instantiations:
+        - [ "C++ type name" ]
