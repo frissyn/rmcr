@@ -2,9 +2,9 @@
 
 # Helper script to invoke `bindgen.cr`
 
-BASE="$(dirname "$(readlink -f "$0")")"
+BASE="$(dirname "lib")"
 
-CLANG_DIR="$BASE/clang/"
+CLANG_DIR="$BASE/bindgen/clang"
 SOURCE_FILE="$BASE/src/bindgen.cr"
 
 function print_clang_error {
