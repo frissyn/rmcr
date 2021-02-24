@@ -1,0 +1,9 @@
+<<: spec_base.yml
+
+# Uses the default processor pipeline.
+
+classes:
+  Defaults: Defaults
+
+enums:
+  Numeral: Numeral

@@ -1,0 +1,4 @@
+bindgen
+include/generated.hpp
+*.o
+Makefile.variables

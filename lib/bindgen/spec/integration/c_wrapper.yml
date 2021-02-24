@@ -1,0 +1,74 @@
+<<: spec_base.yml
+
+processors:
+  - function_class
+  - inheritance
+  - filter_methods
+  - macros
+  - default_constructor
+  - functions
+  - extern_c
+  - cpp_wrapper
+  - crystal_binding
+  - crystal_wrapper
+  - sanity_check
+
+macros:
+  "CONSTANT_(.*)":
+    map_as: Constant
+    destination: "::" # Map into the target module
+  "ANOTHER_(.*)":
+    map_as: Constant
+    destination: Foo # Map into a new module
+  "VALUE_(.*)": # Value type tests
+    map_as: Constant
+    destination: Value
+  "FORCED_(.*)": # Force given type
+    map_as: Constant
+    type: int
+    destination: Forced
+  "COMPLEX_(.*)":
+    map_as: Constant
+    destination: Complex
+  "ENUM_(.*)":
+    map_as: Enum
+    name: "Thing_\\1"
+    destination: Things
+  "FLAGS_(.*)":
+    map_as: Enum
+    flags: true
+    type: unsigned int
+    destination: Foo::Bar
+
+functions:
+  # For `Processor::Functions`
+  one: Funcs
+  two: { destination: "Funcs", name: "two" }
+  "thr(ee)": Funcs::Thr
+  "fou(r)": { destination: "Funcs", name: "fou\\1" }
+  "mycalc_(.*)": Funcs::Calc
+  "thing_([^_]+)_(.*)": { destination: "Funcs", name: "\\1::\\2" }
+
+  # Name rewriting
+  "^dont_crystalize_(.*)": DontCrystalize
+  "^crystalize_(.*)":
+    destination: Crystalize
+    crystalize_names: true
+
+  # For `Processor::FunctionClass`
+  "buffer_(.*)": # Simple class
+    destination: Buffer
+    class:
+      structure: string_buffer
+      constructors:
+        - buffer_new
+        - buffer_new_string
+      destructor: buffer_free
+  "my_int_(.*)": # Class without crystalized names
+    destination: MyInt
+    crystalize_names: false
+    class:
+      structure: my_int
+      constructors:
+        - my_int_new
+      destructor: my_int_free

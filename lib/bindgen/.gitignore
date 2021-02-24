@@ -1,0 +1,26 @@
+/doc/
+/lib/
+/bin/
+/.shards/
+shard.lock
+
+.vscode
+.idea
+
+clang/build
+
+# CMake ignores
+cmake-build-debug
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+spec/integration/spec_base.yml

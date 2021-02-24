@@ -1,0 +1,9 @@
+---
+version: 1.0
+shards:
+  toka:
+    git: https://github.com/Papierkorb/toka.git
+    version: 0.1.2
+  bindgen:
+    git: https://github.com/Papierkorb/bindgen.git
+    version: 0.7.0

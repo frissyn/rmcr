@@ -1,0 +1,16 @@
+name: rmcr
+version: 0.0.1a
+
+authors:
+    - frissyn
+
+description: |
+    Simple and extensive Crystal interface for the
+    rainmeter-plugin SDK.
+
+dependencies:
+    bindgen:
+        github: Papierkorb/bindgen
+        version: ~> 0.7.0
+
+license: MIT
